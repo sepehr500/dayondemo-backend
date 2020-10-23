@@ -8,8 +8,12 @@ export class AppGateway implements OnGatewayInit {
   @WebSocketServer() wss: Server;
   afterInit(): void {
     setInterval(async () => {
+      try {
       const results = await this.airtableService.getStandings()
       this.wss.emit("updateStandings", results)
+      } catch (error) {
+        console.log(error);
+      }
     }, 5000)
   }
 }

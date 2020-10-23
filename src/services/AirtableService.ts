@@ -24,7 +24,6 @@ export class AirtableService {
     async getStandings(): Promise<any> {
         const results = await this.base('VoteStandings').select({
             maxRecords: 100,
-            view: "Grid view"
         }).all();
         return results.flatMap((r: { fields: any; }) => r.fields)
     }

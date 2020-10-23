@@ -1,4 +1,4 @@
-import { WebSocketGateway, OnGatewayInit, WebSocketServer, OnGatewayConnection } from '@nestjs/websockets';
+import { WebSocketGateway, OnGatewayInit, WebSocketServer } from '@nestjs/websockets';
 import { Server } from 'http';
 import { AirtableService } from './services/AirtableService';
 
